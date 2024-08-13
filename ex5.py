@@ -1,3 +1,4 @@
+import math
 raioDoCirculo = float(input("Qual o raio do circulo em questão? "))
-areaDoCirculo = (2*3.14)*raioDoCirculo
-print(f"A área do circulo é de {areaDoCirculo:.2f} metros")
+area = math.pi * math.pow(raioDoCirculo,2)
+print(f"A área do circulo é de {area:.2f} metros")
