@@ -15,17 +15,6 @@ if 0 <= diaEscolhido <= 6:
 else:
     print("Valor inválido")
 
-
-
-
-
-
-
-
-
-
-
-
 '''if diaEscolhido == 1:
     print("O dia escolhido foi Domingo")
 if diaEscolhido == 2:
@@ -42,5 +31,3 @@ if diaEscolhido == 7:
     print("O dia escolhido foi Sábado")
 else:
     print("Valor inválido")'''
-
-
