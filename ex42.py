@@ -20,13 +20,11 @@ if quantidadeMacas <= 5:
 if quantidadeMacas > 5:
     precoBrutoMaca = precoMacaMaisDe5 * quantidadeMacas
 
+quantidadeTotal = quantidadeMorangos + quantidadeMacas
 valorTotal = precoBrutoMorango + precoBrutoMaca
 
-
-if quantidadeMorangos + quantidadeMacas >= 8 or valorTotal > 25:
+if quantidadeTotal > 8 and valorTotal > 25:
     valorComDesconto = valorTotal * 0.9
-    valorDescontado = valorTotal - valorComDesconto
-    print(f"O valor total pago pelo cliente foi de R${valorTotal}reais, uma vez que somou o R${precoBrutoMorango}reais + R${precoBrutoMaca}reais e foi descontado R${valorDescontado:.2F}reais ")
-    print(f"O valor total pago pelo cliente foi de {valorTotal}, uma vez que somou o R${precoBrutoMorango}reais + R${precoBrutoMaca}reais")
+    print(f"O valor com desconto de 10% ficou de R${valorComDesconto:.2f}reais")
 else:
-    print(f"O valor total pago pelo cliente foi de {valorTotal}, uma vez que somou o R${precoBrutoMorango}reais + R${precoBrutoMaca}reais")
+    print(f"O valor ficou de R${valorTotal}reais, somando R${precoBrutoMorango}reais do morango com R${precoBrutoMaca}reais da maça")
