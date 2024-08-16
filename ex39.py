@@ -1,6 +1,6 @@
-numero1 = int(input("Digite um valor qualquer: "))
-numero2 = int(input("Digite outro valor qualquer: "))
-operacao = int(input(""" 
+numero1 = float(input("Digite um valor qualquer: "))
+numero2 = float(input("Digite outro valor qualquer: "))
+operacao = float(input(""" 
 [1] ADIÇÃO
 [2] SUBTRAÇÃO
 [3] MULTIPLICAÇÃO
@@ -16,24 +16,35 @@ divisao = numero1 / numero2
 
 if operacao == 1:
     valorResultadoConta = adicao
-if operacao == 2:
+elif operacao == 2:
     valorResultadoConta = subtracao
-if operacao == 3:
+elif operacao == 3:
     valorResultadoConta = multiplicacao
-if operacao == 4 :
+elif operacao == 4:
     valorResultadoConta = divisao
+else:
+    print("Operação Inválida")
+    exit()
 
+# PARA SABER SE É PAR OU IMPAR 
+if valorResultadoConta % 2 == 0:
+    paridade = "par"
+else:
+    paridade = "ímpar"
 
-if valorResultadoConta % 2 == 0 and valorResultadoConta > 0 and valorResultadoConta % 1 == 0: 
-    print(f"O número {valorResultadoConta} é par, positivo e inteiro! ")
+# PARA SABER SE É POSITIVO OU NEGATIVO
+if valorResultadoConta > 0:
+    sinal = "Positivo"
+if valorResultadoConta < 0:
+    sinal = "Negativo"
+else:
+    sinal = "Zero"
 
-elif valorResultadoConta % 2 == 0 and valorResultadoConta < 0 and valorResultadoConta % 1 == 0: 
-    print(f"O número {valorResultadoConta} é par, negativo e inteiro! ")
+#PARA SABER SE É INTEIRO OU DECIMAL
+if valorResultadoConta % 1 == 0:
+    tipo = "Inteiro"
+else:
+    tipo = "Decimal"
 
-if valorResultadoConta % 2 == 1:
-    situacaonumero = ''
-    if valorResultadoConta < 0:
-        situacaonumero = "negativo"
-    else:
-        situacaonumero = "positivo"
-        print(f"O número {valorResultadoConta} é impar, {situacaonumero} e decimal")    
+print(f"""O valor obtido após a conta é {paridade}, {sinal} e {tipo}
+ valor obtido é {valorResultadoConta:.2f}""")
