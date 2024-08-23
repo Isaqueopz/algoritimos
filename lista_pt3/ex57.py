@@ -7,7 +7,7 @@ for i in range(15):
     idade = int(input("Qual é a sua idade: "))
     opniao = int(
         input(
-            "Qual a sua opnião em relação ao filme [3 -> ÓTIMO, 2 -> BOM, 1 -> REGULAR  -> ]"
+            "Qual a sua opnião em relação ao filme [3 -> ÓTIMO, 2 -> BOM, 1 -> REGULAR] ->  "
         )
     )
     if opniao not in [3, 2, 1]:

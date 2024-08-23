@@ -1,36 +1,38 @@
-listCodigos = []
-listQuantidades = []
-itens = {
-        100 : "Cachorro Quente",
-        101 : 'Bauru Simples',
-        102 : 'Bauru com ovo',
-        103 : 'Hambúrguer',
-        104 : 'Cheeseburguer',
-        105 : 'Refrigerante',
-        }
+print("""                 Código  Valor
+Cachorro quente - 100 - R$1.20
+Bauru simples   - 101 - R$1.30
+Bauru com ovo   - 102 - R$1.50
+Hambúrguer      - 103 - R$1.20
+Cheeseburguer   - 104 - R$1.30
+Refrigerante    - 105 - R$1.00
+      """)
+
+somaTotal = 0
 
 while True:
-    codigoDoProduto = int(
-        input("""
-Especificação    Código  
+    opcao = int(input("Escolha itens acima através do código para realizar sua compra: "))
 
-Cachorro Quente - 100 
-Bauru Simples   - 101 
-Bauru com ovo   - 102 
-Hambúrguer      - 103 
-Cheeseburguer   - 104 
-Refrigerante    - 105 
+    if opcao < 100 or opcao > 105:
+        print("Opção inválida, selecione o código novamente.")
+        continue
 
-Qual será o código do produto? """)
-    )
-    quantidade = int(input(f"Qual a quantidade que você quer de {itens[codigoDoProduto]}: "))
+    quantidade = int(input('Qual será a quantidade que você irá querer: '))
+    
+    if opcao == 100 or opcao == 103:
+        somaTotal += quantidade * 1.20
+            
+    if opcao == 101 or opcao == 104:
+        somaTotal += quantidade * 1.30
+            
+    if opcao == 102:
+        somaTotal += quantidade * 1.50
 
+    if opcao == 105:
+        somaTotal += quantidade * 1.00
 
-    listCodigos.append(codigoDoProduto)
-    listQuantidades.append(quantidade)
-
-    pergunta = str(input("Você quer encerrar a compra [S/N]:  "))
-    if pergunta in ["S","s"]:
+    pergunta = input("Quer continuar [S/N]: ").strip().lower()
+    if pergunta == 'n':
         break
 
+print(f"A soma total foi de: R${somaTotal:.2f}")
 
