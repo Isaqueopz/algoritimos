@@ -1,5 +1,0 @@
-precoDeCusto = float(input("Digite um preço de custo: "))
-percentual = str(input("Digite o percentual de acréscimo para a venda do referido produto: "))
-percentual = float(percentual.replace('%',''))
-valorVenda = precoDeCusto * (1 + (percentual/100))
-print (f"O valor de venda é de R${valorVenda:.1f}reais")
