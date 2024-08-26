@@ -1,28 +1,36 @@
+# Solicita a quantidade de partidas
+quantidadeDePartidas = int(input("Qual a quantidade de partidas do campeonato: "))
 
-somaPontosVitoria = 0
-somaPontosEmpate = 0
-quantidadeDePartidas = int(input("Qual foi a quantidade de partidas jogadas: "))
-quantidadeTotalDeGols = int(input("A quantidade total de gols foi de: "))
+# Inicializa a soma total de pontos
+somaTotal = 0
 
-print('-='*30)
-tabelaDeDados = print("""TABELA DE PONTUAÇÕES:
-VITÓRIA [1]
-EMPATE  [2]
-DERROTA [3]""")
-print('-='*30)
+# Loop para processar cada partida
+for _ in range(quantidadeDePartidas):
+    # Solicita o placar do jogo
+    placar = input("Qual foi o placar do jogo [no formato gols da casa - gols de fora]: ")
 
-for i in range (quantidadeDePartidas):
-            quantidadeDeGols = int(input(f" Mediante a tabela passada, qual o resultado da {i+1}º partida ? "))
-            if quantidadeDeGols not in [1,2,3]:
-                print("Número Inválido")
-                break
-            if quantidadeDeGols == 1:
-                somaPontosVitoria += 3
-            if quantidadeDeGols == 2:
-                somaPontosEmpate += 1
-            if quantidadeDeGols < 0:
-                break
+    # Divide o placar em duas partes usando o hífen como delimitador
+    placarPartes = placar.split('-')
+    
+    # Converte as partes para inteiros
+    placarTime1 = int(placarPartes[0])
+    placarTime2 = int(placarPartes[1])
+    
+    # Verifica se os gols são negativos
+    if placarTime1 < 0 or placarTime2 < 0:
+        print("O número de gols está inválido!")
+        break  # Encerra o loop se algum dos valores de gols for negativo
 
-somaTot = somaPontosVitoria + somaPontosEmpate
+    # Lógica para calcular os pontos
+    if placarTime1 > placarTime2:
+        print("O seu time ganhou, você fez 3 pontos.")
+        somaTotal += 3
+    elif placarTime1 == placarTime2:
+        print("O jogo deu empate! Você fez 1 ponto.")
+        somaTotal += 1
+    else:
+        print("O seu time perdeu o jogo, você não pontuou nada.")
 
-print(f"Você jogou {quantidadeDePartidas} partidas, fazendo no total {quantidadeTotalDeGols} gols, sendo assim sua pontuação geral é de {somaTot} pontos! ")
+# Exibe a pontuação total
+print(f"A pontuação total foi de {somaTotal}")
+
