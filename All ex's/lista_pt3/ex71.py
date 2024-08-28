@@ -1,13 +1,15 @@
 numero = int(input("Digite um número para verificar se é triangular: "))
 n = 1
-while True:
+numeroTriangular = True
+numeroNãoTriangular = True
+while numeroTriangular and numeroNãoTriangular:
     produto = n * (n + 1) * (n + 2)
     if produto == numero:
         print(f"O número {numero} é triangular.")
-        break
+        numeroTriangular = False
     if produto > numero:
         print(f"O número {numero} não é triangular.")
-        break
+        numeroNãoTriangular = False
     else:
         n += 1
 

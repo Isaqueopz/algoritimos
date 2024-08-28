@@ -8,8 +8,8 @@ Refrigerante    - 105 - R$1.00
       """)
 
 somaTotal = 0
-
-while True:
+pergunta = ['S','s']
+while pergunta not in ['N','n']:
     opcao = int(input("Escolha itens acima através do código para realizar sua compra: "))
 
     if opcao < 100 or opcao > 105:
@@ -31,8 +31,6 @@ while True:
         somaTotal += quantidade * 1.00
 
     pergunta = input("Quer continuar [S/N]: ").strip().lower()
-    if pergunta == 'n':
-        break
 
 print(f"A soma total foi de: R${somaTotal:.2f}")
 
