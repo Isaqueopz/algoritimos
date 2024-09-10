@@ -19,7 +19,8 @@ else:
         novoSalario = salarioBruto*porcentagemIR2
     if salarioBruto >= 2500:
         novoSalario = salarioBruto*porcentagemIR3
-    descontoImpostoRenda = salarioBruto - novoSalario
+
+descontoImpostoRenda = salarioBruto - novoSalario
 
 descontosTotal = descontoINSS + descontoImpostoRenda
 salarioLiquido = salarioBruto - descontosTotal

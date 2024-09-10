@@ -26,13 +26,11 @@ else:
     print("Operação Inválida")
     exit()
 
-# PARA SABER SE É PAR OU IMPAR 
 if valorResultadoConta % 2 == 0:
     paridade = "par"
 else:
     paridade = "ímpar"
 
-# PARA SABER SE É POSITIVO OU NEGATIVO
 if valorResultadoConta > 0:
     sinal = "Positivo"
 if valorResultadoConta < 0:
@@ -40,7 +38,6 @@ if valorResultadoConta < 0:
 else:
     sinal = "Zero"
 
-#PARA SABER SE É INTEIRO OU DECIMAL
 if valorResultadoConta % 1 == 0:
     tipo = "Inteiro"
 else:

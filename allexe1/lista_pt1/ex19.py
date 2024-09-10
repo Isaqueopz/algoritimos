@@ -7,4 +7,3 @@ velocidadeInternet = float(
 tempoSegundos = tamanhoDownload / velocidadeInternet
 tempoMinutos = tempoSegundos / 60
 print(f"O tempo aproximado de download é de {tempoMinutos:.2f} minutos.")
-
